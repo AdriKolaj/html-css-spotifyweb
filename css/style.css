@@ -42,11 +42,14 @@ a {
 
 /* nav section */
 #main_nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 220px;
   height: 100%;
   background-color: #040404;
   overflow: hidden;
-  padding: 15px 20px;
+  padding: 15px 20px 5px 20px;
 }
 #main_nav ul li {
   padding: 7px 0;
@@ -103,6 +106,40 @@ a {
   color: #040404;
 }
 /* /central nav */
+
+/* lower nav */
+#nav_lower .install_app {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #B3B3B3;
+}
+#nav_lower .install_app a{
+  display: flex;
+}
+#nav_lower .install_app .far {
+  margin-right: 12px;
+}
+
+#nav_lower .spotify_user {
+  display: flex;
+  align-items: center;
+  padding-top: 12px;
+}
+#nav_lower .user_pic {
+  width: 27px;
+  margin-right: 12px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+#nav_lower .user_pic img{
+  width: 100%;
+}
+
+#nav_lower .name_id {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+/* /lower nav */
 
 /* /nav section */
 
