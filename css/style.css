@@ -24,6 +24,20 @@ main {
   background-color: green;
   overflow-y: hidden;
 }
+
+h1 {
+  text-transform: uppercase;
+  font-size: 16px;
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
 /* /General Settings */
 
 /* nav section */
@@ -34,43 +48,60 @@ main {
   overflow: hidden;
   padding: 15px 20px;
 }
+#main_nav ul li {
+  padding: 7px 0;
+}
+#main_nav a {
+  font-size: 14px;
+}
+
 /* upper nav */
-#main_nav .nav_logo {
+#nav_upper .nav_logo {
   display: flex;
   padding-bottom: 5px;
 }
-#main_nav .nav_logo img {
+#nav_upper .nav_logo img {
   width: 80%;
 }
 
-#main_nav .nav_menu {
-  padding: 15px 0;
+#nav_upper .nav_menu {
+  padding: 15px 0 20px 0;
 }
-#main_nav .nav_menu ul {
-  list-style: none;
-}
-#main_nav .nav_menu ul li {
-  padding: 7px 0;
-}
-#main_nav .nav_menu ul li a{
+#nav_upper .nav_menu ul li a{
   display: flex;
   align-items: center;
-  text-decoration: none;
-  color: inherit;
-
 }
-#main_nav .nav_icon {
+
+#nav_upper .nav_icon {
   width: 25px;
   margin-right: 12px;
   font-size: 23px;
 }
-#main_nav .nav_txt {
-  font-size: 14px;
-}
 /* /upper nav */
 
 /* central nav  */
+#nav_central .create_playlist {
+  padding: 12px 0;
+}
 
+#nav_central .create_playlist a {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+#nav_central .create_playlist .add_button {
+  display: flex;
+  width: 37px;
+  height: 37px;
+  background-color: #B3B3B3;
+  margin-right: 12px;
+}
+#nav_central .create_playlist .add_button .fas {
+  margin: auto;
+  font-size: 20px;
+  color: #040404;
+}
 /* /central nav */
 
 /* /nav section */
