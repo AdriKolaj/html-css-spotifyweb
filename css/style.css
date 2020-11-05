@@ -200,6 +200,9 @@ a {
   border: 1px solid #E7E7E8;
   border-radius: 50px;
 }
+#main_content .cta a:hover {
+  font-size: 14px;
+}
 
 #main_content .container {
   margin-top: 80px;
@@ -207,10 +210,93 @@ a {
 }
 /* /content section */
 
+/* footer section */
 footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 90px;
   background-color: #282828;
+  padding: 10px;
 }
+
+/* left footer section */
+#footer_left {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+}
+
+#footer_left .img_now_playing {
+  height: 55px;
+  width: 55px;
+  margin-right: 10px;
+  background-image: url('../img/now-playing.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#footer_left .img_now_playing:hover {
+  cursor: pointer;
+}
+.img_now_playing .layover {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#footer_left .txt_now_playing {
+  margin-right: 30px;
+}
+.title_now_playing {
+  font-size: 14px;
+  color: white;
+  font-weight: 600;
+}
+.artist_now_playing {
+  font-size: 13px;
+}
+.artist_now_playing:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.save_song button {
+  width: 25px;
+  height: 25px;
+  border: none;
+  color: #6E6E6E;
+  background-color: transparent;
+}
+.save_song button:hover {
+  cursor: pointer;
+  color: #D2D2D2;
+}
+
+.save_song button .far{
+  font-size: 18px;
+  font-weight: 500;
+}
+/* /left footer section */
+
+/* center footer section */
+#footer_center {
+  width: 40%;
+  height: 100%;
+  background-color: blue;
+}
+/* /center footer section */
+
+/* right footer section */
+#footer_right {
+  width: 30%;
+  height: 100%;
+  background-color: green;
+}
+/* /right footer section */
+/* /footer section */
+
 
 /* xs devices */
 @media only screen and (max-width: 767px) {
@@ -292,13 +378,6 @@ footer {
 @media only screen and (min-width: 768px) {
   #nav_upper #short_logo {
     display: none;
-  }
-
-  #nav_menu ul:first-child::after {
-    content: "";
-    width: 5px;
-    height: 100%;
-    background-color: green;
   }
 }
 /* /all devices except xs */
