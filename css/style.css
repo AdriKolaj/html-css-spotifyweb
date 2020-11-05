@@ -9,7 +9,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   font-weight: 500;
-  color: #B3B3B3;
+  color: #6E6E6E;
 }
 
 .wrapper {
@@ -20,7 +20,7 @@ body {
 
 main {
   display: flex;
-  height: calc(100% - 100px);
+  height: calc(100% - 90px);
   background-color: green;
   overflow-y: hidden;
 }
@@ -47,9 +47,10 @@ a {
   justify-content: space-between;
   width: 220px;
   height: 100%;
-  background-color: #040404;
+  min-height: 470px;
   overflow: hidden;
   padding: 15px 20px 5px 20px;
+  background-color: black;
 }
 #main_nav ul li {
   padding: 7px 0;
@@ -57,8 +58,18 @@ a {
 #main_nav a {
   font-size: 14px;
 }
+#main_nav a:hover{
+  color: #D2D2D2;
+}
 
-/* upper nav */
+.nav_top {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: calc(100% - 75px);
+}
+
+/* top nav */
 #nav_upper .nav_logo {
   display: flex;
   padding-bottom: 5px;
@@ -80,9 +91,16 @@ a {
   margin-right: 12px;
   font-size: 23px;
 }
-/* /upper nav */
+/* /top nav */
 
 /* central nav  */
+#nav_central {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+}
+
 #nav_central .create_playlist {
   padding: 12px 0;
 }
@@ -97,20 +115,29 @@ a {
   display: flex;
   width: 37px;
   height: 37px;
-  background-color: #B3B3B3;
+  background-color: #6E6E6E;
   margin-right: 12px;
 }
+
+#nav_central .create_playlist .add_button:hover {
+  background-color: #D2D2D2;
+}
+
 #nav_central .create_playlist .add_button .fas {
   margin: auto;
   font-size: 20px;
   color: #040404;
 }
+#nav_central .list_playlist{
+  height: 100%;
+  overflow-y: auto;
+}
 /* /central nav */
 
 /* lower nav */
 #nav_lower .install_app {
-  padding-bottom: 12px;
-  border-bottom: 1px solid #B3B3B3;
+  padding: 12px 0;
+  border-bottom: 1px solid #6E6E6E;
 }
 #nav_lower .install_app a{
   display: flex;
@@ -126,12 +153,14 @@ a {
 }
 #nav_lower .user_pic {
   width: 27px;
+  height: 27px;
   margin-right: 12px;
   border-radius: 100%;
   overflow: hidden;
-}
-#nav_lower .user_pic img{
-  width: 100%;
+  background-image: url("../img/avatar.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 #nav_lower .name_id {
@@ -143,14 +172,133 @@ a {
 
 /* /nav section */
 
+/* content section */
 #main_content {
   width: calc(100% - 220px);
   height: 100%;
-  background-color: #131313;
-  overflow-y: scroll;
+  background-color: #141922;
+  overflow-y: auto;
 }
 
+#main_content .cta {
+  display: flex;
+  flex-direction: row-reverse;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: calc(100% - 220px);
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+#main_content .cta a {
+  margin: auto 20px;
+  padding: 12px 40px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #E7E7E8;
+  border: 1px solid #E7E7E8;
+  border-radius: 50px;
+}
+
+#main_content .container {
+  margin-top: 80px;
+  padding: 20px;
+}
+/* /content section */
+
 footer {
-  height: 100px;
+  height: 90px;
   background-color: #282828;
 }
+
+/* xs devices */
+@media only screen and (max-width: 767px) {
+  /* nav section */
+  #main_nav {
+    width: 45px;
+    padding: 5px 0;
+  }
+
+  #extended_logo,
+  #main_nav span,
+  #nav_central {
+    display: none;
+  }
+
+  #nav_upper .nav_icon,
+  #nav_lower .download_icon {
+    margin-right: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* top nav */
+  #nav_upper a {
+    width: 100%;
+    text-align: center;
+  }
+  #nav_upper .nav_logo {
+    padding: 0;
+  }
+  #nav_upper .nav_logo img {
+    width: 65%;
+  }
+
+  #nav_upper .nav_menu {
+    padding-top: 0;
+  }
+  #nav_upper .nav_menu .fas {
+    font-size: 22px;
+  }
+  /* /top nav */
+
+
+  /* lower nav */
+  #nav_lower .install_app {
+    border-bottom: none;
+  }
+
+  #nav_lower .install_app .far,
+  #nav_lower .user_pic {
+    margin: auto;
+  }
+  #nav_lower .spotify_user {
+    padding-top: 0;
+  }
+  #nav_lower .user_pic {
+    width: 24px;
+    height: 24px;
+  }
+  /* /lower nav */
+  /* /nav section */
+
+  /* main section */
+  #main_content {
+    width: calc(100% - 45px);
+  }
+  #main_content .cta {
+    width: calc(100% - 45px);
+  }
+  #main_content .cta a {
+    font-size: 10px;
+    padding: 10px 30px;
+  }
+  /* /main section */
+}
+/* /xs devices */
+
+/* all devices except xs */
+@media only screen and (min-width: 768px) {
+  #nav_upper #short_logo {
+    display: none;
+  }
+
+  #nav_menu ul:first-child::after {
+    content: "";
+    width: 5px;
+    height: 100%;
+    background-color: green;
+  }
+}
+/* /all devices except xs */
