@@ -33,6 +33,7 @@ h1 {
 
 h2 {
   color: #D2D2D2;
+  margin-bottom: 10px;
 }
 h3 {
   font-size: 16px;
@@ -204,6 +205,7 @@ a {
   height: 80px;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
 }
 #main_content .cta a {
   margin: auto 20px;
@@ -234,6 +236,9 @@ a {
 #index a {
   margin: 0 12px;
   font-weight: 600;
+}
+#index a:hover {
+  color: #D2D2D2;
 }
 /* index section */
 
@@ -286,13 +291,16 @@ a {
   opacity: 1;
 }
 
-
 .txt_album {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.circle {
+  border-radius: 100%;
+  overflow: hidden;
+}
 
 /* /music albums section */
 /* /content section */
