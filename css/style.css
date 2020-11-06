@@ -232,6 +232,7 @@ a {
   display: flex;
   justify-content: center;
   text-transform: uppercase;
+  flex-wrap: wrap;
 }
 #index a {
   margin: 0 12px;
@@ -523,8 +524,6 @@ footer {
   background-color: #c1c1c1;
   overflow: visible;
 }
-
-
 /* /right footer section */
 /* /footer section */
 
@@ -683,13 +682,38 @@ footer {
 
 /* s devices  */
 @media only screen and (max-width: 991px) {
-
-  /* /footer section */
-  #footer_left .txt_now_playing {
+  .album_list .album {
+    width: calc(100% / 2);
   }
-  /* /footer section */
+
+  #index a {
+    font-size: 13px;
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+  h3 {
+    font-size: 15px;
+  }
+  h4{
+    font-size: 13px;
+  }
 }
 /* /s devices  */
+
+/* md devices */
+@media only screen and (max-width: 1199px) {
+  .album {
+    width: calc(100% / 4);
+    padding-bottom: 25px;
+  }
+
+  #index a {
+    padding-bottom: 20px;
+  }
+}
+/* /md devices */
 
 /* all devices except xs */
 @media only screen and (min-width: 768px) {
