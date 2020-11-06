@@ -45,7 +45,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 220px;
+  width: 230px;
   height: 100%;
   min-height: 470px;
   overflow: hidden;
@@ -174,7 +174,7 @@ a {
 
 /* content section */
 #main_content {
-  width: calc(100% - 220px);
+  width: calc(100% - 230px);
   height: 100%;
   overflow-y: auto;
   background-color: #141922;
@@ -186,7 +186,7 @@ a {
   position: fixed;
   right: 0;
   top: 0;
-  width: calc(100% - 220px);
+  width: calc(100% - 230px);
   height: 80px;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.7);
@@ -202,7 +202,7 @@ a {
   border-radius: 50px;
 }
 #main_content .cta a:hover {
-  font-size: 14px;
+  transform: scale(1.1);
 }
 
 #main_content .container {
@@ -213,50 +213,79 @@ a {
 
 /* footer section */
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 90px;
   background-color: #282828;
-  padding: 10px;
+}
+
+.progress_score:hover,
+.volume_bar:hover {
+  cursor: pointer;
+}
+.progress_score:hover > .listened_score,
+.volume_bar:hover > .volume_bar_progress {
+  background-color: #1BD760;
+}
+.score_hover {
+  content= "";
+  display: inline-block;
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+  border-radius: 100%;
+  background-color: #D2D2D2;
+  opacity: 0;
+}
+.progress_score:hover .score_hover,
+.volume_bar:hover .score_hover {
+  opacity: 1;
 }
 
 /* left footer section */
 #footer_left {
   display: flex;
   align-items: center;
-  width: 30%;
-  height: 100%;
+  width: 230px;
+  padding-left: 10px;
 }
 
 #footer_left .img_now_playing {
-  height: 55px;
-  width: 55px;
+  position: relative;
+  height: 45px;
+  width: 45px;
   margin-right: 10px;
-  background-image: url('../img/now-playing.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
 }
+
+#footer_left .img_now_playing img {
+  height: 100%;
+  opacity: 0.6;
+}
+
 #footer_left .img_now_playing:hover {
   cursor: pointer;
-}
-.img_now_playing .layover {
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
 }
 
 #footer_left .txt_now_playing {
   margin-right: 30px;
+  display: flex;
+  flex-direction: column;
 }
 .title_now_playing {
-  font-size: 14px;
+  font-size: 13px;
   color: white;
   font-weight: 600;
 }
 .artist_now_playing {
-  font-size: 13px;
+  font-size: 11px;
 }
 .artist_now_playing:hover {
   text-decoration: underline;
@@ -264,8 +293,7 @@ footer {
 }
 
 .save_song button {
-  width: 25px;
-  height: 25px;
+  width: 22px;
   border: none;
   color: #6E6E6E;
   background-color: transparent;
@@ -276,7 +304,7 @@ footer {
 }
 
 .save_song button .far{
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
 }
 /* /left footer section */
@@ -285,33 +313,42 @@ footer {
 #footer_center {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: space-between;
-  width: 40%;
   height: 100%;
+  width: 45%;
 }
 
 .player_buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 50%;
+  padding-top: 10px;
 }
 
 .player_buttons button {
-  width: 45px;
+  width: 40px;
   height: 40px;
   border: none;
   color: white;
   background-color: transparent;
 }
+.player_buttons button i:hover {
+  cursor: pointer;
+}
+
 #play {
   margin: 0 10px;
 }
+#play:hover {
+  transform: scale(1.2);
+}
 .player_buttons button .far {
-  font-size: 30px;
+  font-size: 29px;
 }
 .player_buttons button .fas{
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .player_score {
@@ -319,8 +356,9 @@ footer {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 90%;
-  height: 30%;
+  width: 80%;
+  height: 50%;
+  padding-bottom: 12px;
 }
 
 .progress_score {
@@ -329,25 +367,70 @@ footer {
   margin: 0 20px;
   border-radius: 5px;
   overflow: hidden;
-  background-color: grey;
+  background-color: #545454;
+  overflow: visible;
 }
 .listened_score {
+  position: relative;
   width: 25%;
   height: 100%;
-  background-color: white;
+  background-color: #c1c1c1;
+  overflow: visible;
 }
 
+.time_score {
+  display: flex;
+}
 .time_score span {
-  font-size: 12px;
+  height: 100%;
+  font-size: 11px;
   color: white;
 }
 /* /center footer section */
 
 /* right footer section */
 #footer_right {
-  width: 30%;
-  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 230px;
+  padding-right: 10px;
 }
+
+.function_buttons {
+  display: flex;
+}
+.function_buttons button {
+  width: 28px;
+  border: none;
+  color: white;
+  background-color: transparent;
+}
+.function_buttons button i {
+  font-size: 12px;
+}
+.function_buttons button i:hover {
+  cursor: pointer;
+}
+
+.volume_bar {
+  width: 45%;
+  height: 4px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-left: 10px;
+  background-color: #545454;
+  overflow: visible;
+}
+.volume_bar_progress {
+  position: relative;
+  width: 20%;
+  height: 100%;
+  background-color: #c1c1c1;
+  overflow: visible;
+}
+
+
 /* /right footer section */
 /* /footer section */
 
@@ -425,8 +508,94 @@ footer {
     padding: 10px 30px;
   }
   /* /main section */
+
+  /* footer */
+  /* footer left */
+  #footer_left,
+  #footer_right {
+    width: 180px;
+  }
+
+  #footer_left .img_now_playing {
+    width: 35px;
+    height: 35px;
+    margin-right: 8px;
+  }
+
+  #footer_left .txt_now_playing {
+    margin-right: 0;
+  }
+  .title_now_playing {
+    font-size: 11px;
+    color: white;
+    font-weight: 500;
+  }
+  .artist_now_playing {
+    font-size: 9px;
+  }
+
+  .save_song button {
+    width: 15px;
+    padding: 0 5px;
+  }
+  .save_song button .far{
+    font-size: 13px;
+    font-weight: 500;
+  }
+  /* /footer left */
+
+  /* footer center */
+  .player_buttons button {
+    width: 20px;
+    height: 40px;
+  }
+  #play {
+    margin: 0 10px;
+  }
+  .player_buttons button .far {
+    font-size: 22px;
+  }
+  .player_buttons button .fas{
+    font-size: 12px;
+  }
+
+  .player_score {
+    width: 90%;
+  }
+  .progress_score {
+    margin: 0 10px;
+  }
+  .time_score span {
+    font-size: 9px;
+  }
+  /* /footer center */
+
+  /* footer right */
+  .function_buttons button {
+    width: 15px;
+    height: 15px;
+  }
+  .function_buttons button i {
+    font-size: 9px;
+  }
+  .volume_bar {
+    width: 45%;
+    margin-left: 5px;
+  }
+  /* /footer right */
+  /* /footer */
 }
 /* /xs devices */
+
+/* s devices  */
+@media only screen and (max-width: 991px) {
+
+  /* /footer section */
+  #footer_left .txt_now_playing {
+  }
+  /* /footer section */
+}
+/* /s devices  */
 
 /* all devices except xs */
 @media only screen and (min-width: 768px) {
